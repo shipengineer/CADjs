@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Это титульный страницы</title>
+  </head>
+  <body>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title" data-number="100">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text" data-number="50">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" id="super_link" class="card-link">Card link</a>
+        <a href="#" class="card-link" data-number="50">Another link</a>
+      </div>
+    </div>
+  </body>
+
+  <script defer>
+    "use strict";
+    //1.
+    console.log("1. ");
+    const superLink = document.getElementById("super_link");
+    console.log(superLink);
+    //2.
+    const cardLink = document.querySelectorAll(".card-link");
+    cardLink.forEach((item) => {
+      item.textContent = "ссылка";
+    });
+    //3.
+    const inBodyCard = document.querySelectorAll(".card-body > .card-link");
+    console.log("3. ");
+    console.log(inBodyCard);
+    //4.
+    const firstFifty = document.querySelector(`[data-number="50"]`);
+    console.log("4. ");
+    console.log(firstFifty);
+    //5.
+    console.log("5. ");
+
+    console.log(document.querySelector("head > title").textContent);
+    //6.
+    const parentNode = document.querySelector(".card-title").parentNode;
+    console.log("6. ");
+    console.log(parentNode);
+    //7.
+    const newElement = document.createElement("p");
+    newElement.textContent = "Привет";
+    document
+      .querySelector(".card")
+      .insertAdjacentElement("afterbegin", newElement);
+    //8.
+    document.querySelector("h6").remove();
+  </script>
+</html>
