@@ -1,4 +1,4 @@
-export async function fetchData() {
+export const fetchData = async () => {
   let responce = await fetch(
     "https://jsonplaceholder.typicode.com/photos?_page=1"
   );
@@ -8,4 +8,4 @@ export async function fetchData() {
   } else {
     alert("fetch error" + responce.status);
   }
-}
+};
